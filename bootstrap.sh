@@ -11,4 +11,7 @@ echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /u
 
 apt-get -y -q install oracle-java7-installer
 
+echo "ad.node=`hostname`" >> loadgen.properties
+echo "54.72.15.220 pmongo" >> /etc/hosts
+
 java -jar evolok-ad3-loadgen-3.4-SNAPSHOT.jar -Dad.loadgen.autostart=true > loadgen.log 2>&1
