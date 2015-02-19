@@ -1,6 +1,6 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/loadgen.properties
-wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/evolok-ad3-loadgen-3.4-SNAPSHOT.jar
+wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/loadgen.ic3.properties -O loadgen.properties
+wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/evolok-ic3-loadgen-3.0.0-SNAPSHOT.jar -O loadgen.jar
 
 apt-get update
 apt-get -y -q install python-software-properties
@@ -11,8 +11,8 @@ echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /u
 
 apt-get -y -q install oracle-java7-installer
 
-echo "ad.node=loadgen-`hostname`" >> loadgen.properties
+echo "ic.node=loadgen-`hostname`" >> loadgen.properties
 echo "54.72.15.220 pmongo1" >> /etc/hosts
 echo "54.77.183.46 pmongo2" >> /etc/hosts
 
-java -jar evolok-ad3-loadgen-3.4-SNAPSHOT.jar -Dad.loadgen.autostart=true > loadgen.log 2>&1
+java -jar loadgen.jar -Dad.loadgen.autostart=true > loadgen.log 2>&1
