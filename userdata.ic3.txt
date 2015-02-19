@@ -1,4 +1,4 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/bootstrap.sh
+wget https://raw.githubusercontent.com/jugglingcats/loadgen/master/bootstrap.ic3.sh
 chmod +x bootstrap.sh
 ./bootstrap.sh
