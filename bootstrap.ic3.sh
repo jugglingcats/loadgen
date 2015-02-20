@@ -11,7 +11,7 @@ echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /u
 
 apt-get -y -q install oracle-java7-installer
 
-echo "ic.node=loadgen-`hostname`" >> loadgen.properties
+echo "metrics.node=loadgen-`hostname`" >> loadgen.properties
 echo "54.72.15.220 pmongo1" >> /etc/hosts
 echo "54.77.183.46 pmongo2" >> /etc/hosts
 
